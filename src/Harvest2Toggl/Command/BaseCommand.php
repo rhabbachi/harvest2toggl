@@ -18,7 +18,7 @@ class BaseCommand extends Command {
    * @param InputInterface  $input  An InputInterface instance
    * @param OutputInterface $output An OutputInterface instance
    */
-  protected function initialize(InputInterface $input, OutputInterface $output) {
+  public function run(InputInterface $input, OutputInterface $output) {
     $io = new SymfonyStyle($input, $output);
     if (is_null($this->getTogglApi())) {
       $io->error("Cannot connect to Toggl.");
@@ -29,6 +29,7 @@ class BaseCommand extends Command {
       $io->error("Cannot connect to Harvest.");
       return 1;
     }
+    parent::run($input, $output);
   }
 
 /**
