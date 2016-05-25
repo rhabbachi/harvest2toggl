@@ -1,0 +1,9 @@
+#!/usr/bin/env php
+<?php
+$loader = require __DIR__ . '/../vendor/autoload.php';
+$loader->add('Harvest2Toggl\\', __DIR__ . '/../src/');
+
+$application = new Harvest2Toggl\Application\MainApplication(__DIR__);
+$application->add(new Harvest2Toggl\Command\UpdateCommand());
+$application->run();
+?>

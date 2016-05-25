@@ -1,0 +1,8 @@
+{
+  "require": {
+    "gridonic/hapi": "dev-master",
+    "symfony/console": "@stable",
+    "ajt/guzzle-toggl": "@stable",
+    "symfony/yaml": "@stable"
+  }
+}
